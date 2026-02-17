@@ -68,7 +68,7 @@ services:
       prefect-server:
         condition: service_healthy
     volumes:
-      - .:/opt/prefect/project
+      - ./scripts:/opt/prefect/project/scripts
     working_dir: /opt/prefect/project
     environment:
       - PREFECT_API_URL=http://prefect-server:4200/api
