@@ -1,6 +1,6 @@
-from flows.simple import main_flow
+from flows.simple import main
 
-FLOW_CONFIG = {
+DEPLOY_CONFIG = {
     "name": "demo-deployment",
     "work_pool_name": "local-pool",
     "cron": "0 * * * *",
@@ -8,7 +8,7 @@ FLOW_CONFIG = {
 }
 
 if __name__ == "__main__":
-    main_flow.from_source(
+    main.from_source(
         source="https://github.com/NickOsipov/otus-prefect-basic.git",
-        entrypoint="flows/simple.py:main_flow"
-    ).deploy(**FLOW_CONFIG)
+        entrypoint="flows/simple.py:main"
+    ).deploy(**DEPLOY_CONFIG)
